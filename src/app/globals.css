@@ -2,25 +2,92 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1d1d1f;
+  
+  /* Philippine Flag Palette */
+  --ph-blue: #0038a8;
+  --ph-blue-hover: #002b82;
+  --ph-blue-light: #ebf2ff;
+  --ph-red: #ce1126;
+  --ph-red-hover: #b00e20;
+  --ph-red-light: #fef2f2;
+  --ph-yellow: #fcd116;
+  --ph-gold: #e5b800;
+  --ph-yellow-light: #fffbeb;
+
+  /* Apple Minimalist Neutrals */
+  --apple-surface: #f5f5f7;
+  --apple-border: #e5e5ea;
+  --apple-secondary: #86868b;
+  --apple-dark: #1d1d1f;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ph-blue: var(--ph-blue);
+  --color-ph-blue-hover: var(--ph-blue-hover);
+  --color-ph-blue-light: var(--ph-blue-light);
+  --color-ph-red: var(--ph-red);
+  --color-ph-red-hover: var(--ph-red-hover);
+  --color-ph-red-light: var(--ph-red-light);
+  --color-ph-yellow: var(--ph-yellow);
+  --color-ph-gold: var(--ph-gold);
+  --color-ph-yellow-light: var(--ph-yellow-light);
+  --color-apple-surface: var(--apple-surface);
+  --color-apple-border: var(--apple-border);
+  --color-apple-secondary: var(--apple-secondary);
+  --color-apple-dark: var(--apple-dark);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
+
+/* Custom scrollbar for minimalist look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d1d6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8e8e93;
+}
+
+/* Glassmorphism helpers */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.apple-glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Subtly elevated card */
+.apple-card {
+  background: #ffffff;
+  border: 1px solid #f0f0f2;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.apple-card:hover {
+  border-color: #d2d2d7;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
